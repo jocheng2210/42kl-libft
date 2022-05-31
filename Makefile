@@ -1,21 +1,22 @@
- NAME = libft.a
+ NAME	= libft.a
 
- SRC = ft_isdigit.c ft_isalpha.c
+ SRC	= ft_isdigit.c ft_isalpha.c
 
- OBJ = ${SRC:.c=.o}
+ OBJ	= ${SRC:.c=.o}
 
- FLAGS = -Wall -Wextra -Werror
- 
- all	: ${NAME}
-	cc ${FLAGS} ${OBJ}
+ FLAGS	= -Wall -Wextra -Werror
 
- $(NAME): ${OBJ}
-	ar -rc $(NAME) ${OBJ}
+ all: ${NAME}
+	ar -rc ${NAME} ${OBJ}
 
- clean	:
-	rm -fr ${OBJ}
+ $(NAME):
+	gcc ${FLAGS} -c ${SRC}
 
- fclean	: clean
- 	rm -fr ${NAME}
+ clean:
+	rm -fr *.o
+	rm -fr *.out
 
- re		: fclean all
+ fclean: clean
+	rm -fr ${NAME}
+
+ re: fclean all
