@@ -2,17 +2,20 @@
 
  SRC = ft_isdigit.c ft_isalpha.c
 
- OBJ = $(SRC:.c=.o)
+ OBJ = ${SRC:.c=.o}
+
+ FLAGS = -Wall -Wextra -Werror
  
- all: $(NAME)
+ all	: ${NAME}
+	cc ${FLAGS} ${OBJ}
 
-$(NAME): $(OBJ)
-	ar -rc $(NAME) $(OBJ)
+ $(NAME): ${OBJ}
+	ar -rc $(NAME) ${OBJ}
 
- clean:
-	rm -f $(OBJ)
+ clean	:
+	rm -fr ${OBJ}
 
- fclean: clean
-	rm -f $(NAME)
+ fclean	: clean
+ 	rm -fr ${NAME}
 
- re:
+ re		: fclean all
