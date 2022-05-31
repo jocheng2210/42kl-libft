@@ -6,12 +6,15 @@
 /*   By: jocheng <jocheng@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 21:05:15 by jocheng           #+#    #+#             */
-/*   Updated: 2022/05/31 21:05:16 by jocheng          ###   ########.fr       */
+/*   Updated: 2022/05/31 21:34:11 by jocheng          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-int	ft_isascii(int ch)
+int	ft_isascii(int i)
 {
-	return (ch >= 0 && ch <= 127);
+	if (i >= 0 && i <= 127)
+		return (1);
+	return (0);
 }

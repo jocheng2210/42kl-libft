@@ -6,14 +6,13 @@
 /*   By: jocheng <jocheng@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 21:06:06 by jocheng           #+#    #+#             */
-/*   Updated: 2022/05/31 21:06:07 by jocheng          ###   ########.fr       */
+/*   Updated: 2022/05/31 21:42:19 by jocheng          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
 
-char		*ft_strnstr(const char *string_b, const char *string_a, size_t n)
+char	*ft_strnstr(const char *string_b, const char *string_a, size_t n)
 {
 	size_t	i;
 	size_t	j;

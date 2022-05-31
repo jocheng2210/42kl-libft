@@ -6,45 +6,33 @@
 /*   By: jocheng <jocheng@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 21:04:10 by jocheng           #+#    #+#             */
-/*   Updated: 2022/05/31 21:04:16 by jocheng          ###   ########.fr       */
+/*   Updated: 2022/05/31 21:29:59 by jocheng          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	check(char ch)
+int	ft_atoi(const char *str)
 {
-	if (ch == ' ' || ch == '\t' || ch == '\v' ||
-			ch == '\r' || ch == '\n' || ch == '\f')
-		return (1);
-	return (0);
-}
-
-int			ft_atoi(const char *str)
-{
-	int				i;
-	int				sing;
-	int				count;
-	long long int	res;
+	int	i;
+	int	neg;
+	int	res;
 
 	i = 0;
+	neg = 1;
 	res = 0;
-	count = 0;
-	sing = 1;
-	while (check(str[i]) == 1)
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
 		i++;
 	if (str[i] == '-' || str[i] == '+')
 	{
-		sing = ((str[i] == '-') ? -1 : 1);
+		if (str[i] == '-')
+			neg *= -1;
 		i++;
 	}
-	while ((str[i] >= '0' && str[i] <= '9') && str[i] != '\0')
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		res = (res * 10) + (str[i] - '0');
+		res = (str[i] - '0') + (res * 10);
 		i++;
-		count++;
-		if (count > 19)
-			return ((sing == -1) ? 0 : -1);
 	}
-	return (res * sing);
+	return (res * neg);
 }

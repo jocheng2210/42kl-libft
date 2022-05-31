@@ -6,12 +6,15 @@
 /*   By: jocheng <jocheng@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 21:05:21 by jocheng           #+#    #+#             */
-/*   Updated: 2022/05/31 21:05:22 by jocheng          ###   ########.fr       */
+/*   Updated: 2022/05/31 21:34:39 by jocheng          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-int	ft_isdigit(int ch)
+int	ft_isdigit(int i)
 {
-	return (ch >= 48 && ch <= 57);
+	while ('0' <= i && i <= '9')
+		return (1);
+	return (0);
 }
