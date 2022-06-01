@@ -6,7 +6,7 @@
 #    By: jocheng <jocheng@student.42kl.edu.my>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 21:08:23 by jocheng           #+#    #+#              #
-#    Updated: 2022/06/01 13:58:23 by jocheng          ###   ########.fr        #
+#    Updated: 2022/06/01 22:06:38 by jocheng          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,8 +34,7 @@
 			ft_strnstr.c \
 			ft_tolower.c \
 			ft_toupper.c \
-			ft_putchar.c \
-			ft_putstr.c \
+			
  
 
  OBJ	= $(SRC:.c=.o)
@@ -45,21 +44,19 @@
  LIBRARY = libft.h
 
  all: $(NAME)
+ 
+ $(NAME): $(OBJ)
+	ar rcs $(NAME) $(OBJ)
 
-$(NAME): $(OBJ)
-	ar -rc $(NAME) $(OBJ)
-
-%.o: %.c
-	$(CC) $(FLAGS) -o $@ -c $<
+#%.o: %.c
+#	$(CC) $(FLAGS) -c $<
 
  clean:
 	rm -fr $(OBJ)
-	rm -fr *.out
 
  fclean: clean
 	rm -fr $(NAME)
 
- norm:
-	norminette *.c
-
  re: fclean all
+
+ .PHONY: all clean fclean re
