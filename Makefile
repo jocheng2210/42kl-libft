@@ -6,7 +6,7 @@
 #    By: jocheng <jocheng@student.42kl.edu.my>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 21:08:23 by jocheng           #+#    #+#              #
-#    Updated: 2022/06/02 16:20:03 by jocheng          ###   ########.fr        #
+#    Updated: 2022/06/02 20:33:25 by jocheng          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,7 @@
 			ft_strnstr.c \
 			ft_tolower.c \
 			ft_toupper.c \
+			ft_substr.c \
 			
  
 
