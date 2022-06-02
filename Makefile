@@ -6,11 +6,17 @@
 #    By: jocheng <jocheng@student.42kl.edu.my>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 21:08:23 by jocheng           #+#    #+#              #
-#    Updated: 2022/06/01 22:06:38 by jocheng          ###   ########.fr        #
+#    Updated: 2022/06/02 14:54:58 by jocheng          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
  NAME	= libft.a
+
+
+
+
+
+
 
  SRC	= ft_atoi.c \
 			ft_bzero.c \
@@ -26,6 +32,7 @@
 			ft_memmove.c \
 			ft_memset.c \
 			ft_strchr.c \
+			ft_strrchr.c \
 			ft_strdup.c \
 			ft_strlcat.c \
 			ft_strlcpy.c \
