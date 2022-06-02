@@ -6,17 +6,11 @@
 #    By: jocheng <jocheng@student.42kl.edu.my>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 21:08:23 by jocheng           #+#    #+#              #
-#    Updated: 2022/06/02 14:54:58 by jocheng          ###   ########.fr        #
+#    Updated: 2022/06/02 16:20:03 by jocheng          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
  NAME	= libft.a
-
-
-
-
-
-
 
  SRC	= ft_atoi.c \
 			ft_bzero.c \
