@@ -6,7 +6,7 @@
 /*   By: jocheng <jocheng@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 20:58:18 by jocheng           #+#    #+#             */
-/*   Updated: 2022/06/02 20:34:57 by jocheng          ###   ########.fr       */
+/*   Updated: 2022/06/03 15:14:40 by jocheng          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,6 @@ int		ft_atoi(const char *str);
 void	*ft_calloc(size_t number, size_t size);
 char	*ft_strdup(const char *str);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
+char *ft_strjoin(char const *s1, char const *s2);
 
 #endif
