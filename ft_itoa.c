@@ -6,7 +6,7 @@
 /*   By: jocheng <jocheng@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 21:17:53 by jocheng           #+#    #+#             */
-/*   Updated: 2022/06/08 18:08:21 by jocheng          ###   ########.fr       */
+/*   Updated: 2022/06/08 18:27:13 by jocheng          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,10 +144,60 @@ char	*ft_itoa(int n)
 		j--;
 	}
 	j++;
-	if (res[j] == 0)
-		res[j] = '-';
+	if (res[0] == 0)
+		res[0] = '-';
 	return (&res[1]);
 }
+
+char	*ft_itoa(int n)
+{
+	char	*res;
+	int		j;
+
+	j = ft_count(n);
+	res = malloc(sizeof(char) * ft_count(n));
+	if (!res)
+		return (NULL);
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648\0"));
+	res[j] = '\0';
+	printf("res[j = %d] = %c\n", j, res[j]);
+	j--;
+	if (n < 0)
+		n = n * -1;
+	while (n >= 0 && j >= 1)
+	{
+		res[j] = ((n % 10) + '0');
+		printf("j = %d\n", j);
+		printf("-------->res[j = %d] = %c\n", j, res[j]);
+		n = n / 10;
+		j--;
+	}
+	printf("before ++, j = %d\n", j);
+	j++;
+	printf("after ++, j = %d\n", j);
+	
+	
+	if (res[0] == 0)
+	{
+		res[0] = '-';
+		printf("res[j = %d] = %c\n", j, res[j]);
+	}
+	
+	
+	printf("-----------------------------------------------\n");
+	int k;
+	
+	k = 0;
+	while(res[k] != '\0')
+	{
+	    printf("%c\n", res[k]);
+	    k++;
+	}
+	printf("-----------------------------------------------\n");
+	return (&res[1]);
+}
+
 /*
 int main(void)
 {
