@@ -6,59 +6,153 @@
 /*   By: jocheng <jocheng@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 21:17:53 by jocheng           #+#    #+#             */
-/*   Updated: 2022/06/04 22:32:44 by jocheng          ###   ########.fr       */
+/*   Updated: 2022/06/08 18:08:21 by jocheng          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/*
 char	*ft_strrev(char *str)
 {
-	int	len;
-	int	i;
-	char	tmp;
+	int		i;
+	int		length;
+	char	buff;
 
-	len = 0;
 	i = 0;
-	while (str[len])
-		len++;
-	len -= 1;
-	while (i < len)
+	length = ft_strlen(str);
+	while (length - 1 > i)
 	{
-		tmp = str[i];
-		str[i] = str[len];
-		str[len] = tmp;
+		buff = str[i];
+		str[i] = str[length - 1];
+		str[length - 1] = buff;
+		length--;
 		i++;
-		len--;
 	}
-	// str[i] = '\0';
 	return (str);
-}
+}*/
 
-char *ft_itoa(int n)
+int	ft_count(int n)
 {
-    char	*res;
+	int	i;
+
+	i = 0;
+	if (n == -2147483648)
+		return (12);
+	if (n == 0)
+		return (2);
+	if (n < 0)
+	{
+		n = n * -1;
+		i++;
+	}
+	while (n > 0)
+	{
+		n = n / 10;
+		i++;
+	}
+	i++;
+	return (i);
+}
+/*
+char	*ft_itoa(int n)
+{
+	char	*res;
 	char	*save;
 	int		neg;
+	int		j;
 
-	if ((res = (char *)malloc(sizeof(char) * 13)) == NULL)
+	j = 0;
+	res = malloc(sizeof(char) * ft_count(n));
+	if (!res)
 		return (NULL);
 	neg = 0;
 	save = res;
 	if (n == 0)
-		return ((char *)"0");
+		return (ft_strdup("0"));
 	if (n == -2147483648)
-		return ((char *)"-2147483648");
-	if (n < 0 && (n = -n))
+		return (ft_strdup("-2147483648"));
+	if (n < 0)
+	{
 		neg = -1;
+		n = -n;
+	}
 	while (n > 0)
 	{
-		*res++ = ((n % 10) + '0');
+		res[j] = ((n % 10) + '0');
 		n = n / 10;
+		j++;
 	}
 	if (neg)
-		*res++ = '-';
-	*res = '\0';
+	{
+		res[j] = '-';
+		j++;
+	}
+	res[j] = '\0';
 	res = ft_strrev(save);
 	return (res);
+}*/
+/*
+char	*ft_itoa(int n)
+{
+	char	*res;
+	int		j;
+
+	j = ft_count(n);
+	res = malloc(sizeof(char) * ft_count(n));
+	if (!res)
+		return (NULL);
+	if (n == 0)
+		return (ft_strdup("0\0"));
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648\0"));
+	res[j] = '\0';
+	j--;
+	if (n < 0)
+		n = n * -1;
+	while (n > 0)
+	{
+		res[j] = ((n % 10) + '0');
+		n = n / 10;
+		j--;
+	}
+	if (j == 1)
+		res[j] = '-';
+	else
+		j++;
+	return (&res[j]);
+}*/
+
+char	*ft_itoa(int n)
+{
+	char	*res;
+	int		j;
+
+	j = ft_count(n);
+	res = malloc(sizeof(char) * ft_count(n));
+	if (!res)
+		return (NULL);
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648\0"));
+	res[j] = '\0';
+	j--;
+	if (n < 0)
+		n = n * -1;
+	while (n >= 0 && j >= 1)
+	{
+		res[j] = ((n % 10) + '0');
+		n = n / 10;
+		j--;
+	}
+	j++;
+	if (res[j] == 0)
+		res[j] = '-';
+	return (&res[1]);
 }
+/*
+int main(void)
+{
+    int k;
+    
+    k = -12345;
+    printf("k in char is %s\n", ft_itoa(k));
+}*/
