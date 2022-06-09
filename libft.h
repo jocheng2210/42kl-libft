@@ -6,7 +6,7 @@
 /*   By: jocheng <jocheng@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 20:58:18 by jocheng           #+#    #+#             */
-/*   Updated: 2022/06/04 18:47:48 by jocheng          ###   ########.fr       */
+/*   Updated: 2022/06/09 12:44:51 by jocheng          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,6 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 #endif
