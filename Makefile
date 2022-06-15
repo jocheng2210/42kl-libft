@@ -6,7 +6,7 @@
 #    By: jocheng <jocheng@student.42kl.edu.my>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 21:08:23 by jocheng           #+#    #+#              #
-#    Updated: 2022/06/09 12:45:26 by jocheng          ###   ########.fr        #
+#    Updated: 2022/06/15 22:17:31 by jocheng          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,7 @@
 			ft_split.c \
 			ft_itoa.c \
 			ft_strmapi.c \
+			ft_striteri.c \
 
  OBJ	= $(SRC:.c=.o)
 

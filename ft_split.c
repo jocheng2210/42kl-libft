@@ -6,7 +6,7 @@
 /*   By: jocheng <jocheng@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/04 18:43:35 by jocheng           #+#    #+#             */
-/*   Updated: 2022/06/15 22:08:02 by jocheng          ###   ########.fr       */
+/*   Updated: 2022/06/15 22:34:32 by jocheng          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ char	**ft_split(char	const *s, char c)
 	if (!ret || !s)
 		return (NULL);
 	while (*s == c && *s != '\0')
-		*s++;
+		s++;
 	while (*s != '\0')
 	{
 		j = 0;
@@ -84,51 +84,6 @@ char	**ft_split(char	const *s, char c)
 	return (ret);
 }
 
-/*
-char	**ft_split(char	const *s, char c)
-{
-	int		i;
-	int		j;
-	int     l;
-	char	**ret;
-
-	i = 0;
-	j = 0;
-	if (!s || !c)
-		return (NULL);
-	ret = malloc(sizeof(char *) * count_words(s, c));
-	if (!ret)
-		return (NULL);
-	while (*s == c)
-	{
-		*s++;
-	}
-	while (*s != '\0')
-	{
-		if (*s != c)
-		{
-			ret[i] = malloc(sizeof(char) * count_char(s, c));
-			l = count_char(s, c) - 1;
-		}
-		while (l != 0)
-		{
-			ret[i][j] = *s;
-			s++;
-			j++;
-			l--;
-		}
-		ret[i][j] = '\0';
-		i++;
-		j = 0;
-		while (*s == c)
-		{
-			s++;
-		}
-	}
-	ret[i] = 0;
-	return (ret);
-}
-*/
 /*
 int main()
 {
