@@ -6,7 +6,7 @@
 /*   By: jocheng <jocheng@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 20:58:18 by jocheng           #+#    #+#             */
-/*   Updated: 2022/06/17 11:31:38 by jocheng          ###   ########.fr       */
+/*   Updated: 2022/06/17 14:11:01 by jocheng          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 
 int		ft_isalpha(int ch);
 int		ft_isdigit(int ch);
@@ -49,5 +55,6 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
 
 #endif
