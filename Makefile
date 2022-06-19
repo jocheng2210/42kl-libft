@@ -6,7 +6,7 @@
 #    By: jocheng <jocheng@student.42kl.edu.my>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 21:08:23 by jocheng           #+#    #+#              #
-#    Updated: 2022/06/19 16:02:19 by jocheng          ###   ########.fr        #
+#    Updated: 2022/06/19 20:28:49 by jocheng          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,6 +50,8 @@
  BONUS	= ft_lstnew.c \
 			ft_lstadd_front.c \
 			ft_lstsize.c \
+			ft_lstlast.c \
+			ft_lstadd_back.c \
 
  OBJ	= $(SRC:.c=.o)
 
