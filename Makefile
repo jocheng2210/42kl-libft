@@ -6,7 +6,7 @@
 #    By: jocheng <jocheng@student.42kl.edu.my>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 21:08:23 by jocheng           #+#    #+#              #
-#    Updated: 2022/06/17 11:53:42 by jocheng          ###   ########.fr        #
+#    Updated: 2022/06/19 16:02:19 by jocheng          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,13 @@
 			ft_putendl_fd.c \
 			ft_putnbr_fd.c \
 
+ BONUS	= ft_lstnew.c \
+			ft_lstadd_front.c \
+			ft_lstsize.c \
+
  OBJ	= $(SRC:.c=.o)
+
+ BONUS_OBJ	= $(BONUS:.c=.o)
 
  CC		= gcc
  FLAGS	= -Wall -Wextra -Werror
@@ -58,15 +64,15 @@
  $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
-#%.o: %.c
-#	$(CC) $(FLAGS) -c $<
+ bonus: $(OBJ) $(BONUS_OBJ)
+	ar rcs $(NAME) $(OBJ) $(BONUS_OBJ)
 
  clean:
-	rm -fr $(OBJ)
+	rm -fr $(OBJ) $(BONUS_OBJ)
 
  fclean: clean
 	rm -fr $(NAME)
 
  re: fclean all
 
- .PHONY: all clean fclean re
+ .PHONY: all clean fclean re bonus

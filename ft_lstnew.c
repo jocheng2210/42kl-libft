@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jocheng <jocheng@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/01 21:17:13 by jocheng           #+#    #+#             */
-/*   Updated: 2022/06/01 21:18:54 by jocheng          ###   ########.fr       */
+/*   Created: 2022/06/17 15:42:11 by jocheng           #+#    #+#             */
+/*   Updated: 2022/06/19 17:24:09 by jocheng          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+t_list	*ft_lstnew(void *content)
 {
-	size_t	i;
+	t_list	*res;
 
-	if (!dst && !src)
-		return (0);
-	i = 0;
-	while (i < n)
+	res = (t_list *)malloc(sizeof(*res));
+	if (!res)
 	{
-		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
-		i++;
+		return (NULL);
 	}
-	return (dst);
+	res->content = content;
+	res->next = NULL;
+	return (res);
 }
