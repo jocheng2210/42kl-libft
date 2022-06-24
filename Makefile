@@ -6,7 +6,7 @@
 #    By: jocheng <jocheng@student.42kl.edu.my>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 21:08:23 by jocheng           #+#    #+#              #
-#    Updated: 2022/06/19 20:28:49 by jocheng          ###   ########.fr        #
+#    Updated: 2022/06/24 19:11:35 by jocheng          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,6 +52,9 @@
 			ft_lstsize.c \
 			ft_lstlast.c \
 			ft_lstadd_back.c \
+			ft_lstdelone.c \
+			ft_lstclear.c \
+			ft_lstiter.c \
 
  OBJ	= $(SRC:.c=.o)
 
