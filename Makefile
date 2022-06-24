@@ -6,7 +6,7 @@
 #    By: jocheng <jocheng@student.42kl.edu.my>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 21:08:23 by jocheng           #+#    #+#              #
-#    Updated: 2022/06/24 19:11:35 by jocheng          ###   ########.fr        #
+#    Updated: 2022/06/24 20:45:20 by jocheng          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,6 +55,7 @@
 			ft_lstdelone.c \
 			ft_lstclear.c \
 			ft_lstiter.c \
+			ft_lstmap.c \
 
  OBJ	= $(SRC:.c=.o)
 
@@ -68,6 +69,10 @@
  
  $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
+
+ %.o: %.c
+	$(CC) -I. $(FLAGS) $< -c -o $@
+	@echo "\033[1A\033[2K\033[1A"
 
  bonus: $(OBJ) $(BONUS_OBJ)
 	ar rcs $(NAME) $(OBJ) $(BONUS_OBJ)
